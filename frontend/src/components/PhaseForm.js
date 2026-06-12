@@ -406,7 +406,6 @@ function Phase1({ data, onChange }) {
 function Phase2({ data, onChange, perimetre }) {
   const set = (key, val) => onChange({ ...data, [key]: val });
   const isCouple = perimetre === 'couple_communaute' || perimetre === 'couple_separation';
-  const who = isCouple ? 'client' : '';
   const label = (base) => isCouple ? `${base} — client` : base;
   const labelF = (base) => `${base} — foyer`;
 
@@ -575,9 +574,8 @@ function Phase2({ data, onChange, perimetre }) {
 }
 
 // ─── PHASE 3 — Fiscalité ───
-function Phase3({ data, onChange, perimetre, profil }) {
+function Phase3({ data, onChange }) {
   const set = (key, val) => onChange({ ...data, [key]: val });
-  const isCouple = perimetre === 'couple_communaute' || perimetre === 'couple_separation';
 
   return (
     <div>
