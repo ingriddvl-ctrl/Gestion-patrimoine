@@ -163,7 +163,7 @@ async def chat(request: ChatRequest):
         "max_tokens": 2048,
     }
 
-    async with httpx.AsyncClient(timeout=60.0) as client:
+    async with httpx.AsyncClient(timeout=120.0) as client:
         try:
             response = await client.post(GROQ_API_URL, json=payload, headers=headers)
             response.raise_for_status()
